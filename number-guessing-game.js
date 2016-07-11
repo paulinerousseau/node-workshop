@@ -10,36 +10,42 @@
 //HINT: there is an npm library called prompt that can help you with that :)
 
 var prompt = require('prompt');
-prompt.start();
 
 function guessTheNumber(){
-    
-    return prompt.get('number', function(err,response){
-        
+         
     var randomNumber = Math.round(Math.random() * 100);
     var tries = 4;
 
-    if (number<randomNumber ){
+    
+     prompt.get('number', function(err,response){
+   
+    if (err){
+        console.log('there was an error');
+    }
+    else if (response.number<randomNumber ){
     console.log('higher!');
     console.log('You have '+tries+' tries left');
+    tries--;
     }
     
-    else if (number>randomNumber){
+    else if (response.number>randomNumber){
       console.log('lower!');
       console.log ('You have '+tries+' tries left');
+      tries--;
     }
       
-    else if (number === randomNumber){
+    else if (response.number === randomNumber){
       console.log ('you win !')
-      console.log ('You have '+lives+' lives left');
+      console.log ('You have '+ tries +' lives left');
     }
     else{
-        console.log ('the correct number was+'randomNumber);
+        console.log ('the correct number was' + " " +randomNumber);
         console.log('You have only '+ (4-tries)+ 'tries left');
     }
     
-        }
-      
-  });
+    })
+};
+  
+  
 
     
