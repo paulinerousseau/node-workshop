@@ -16,7 +16,6 @@ function guessTheNumber(){
     var randomNumber = Math.round(Math.random() * 100);
     var tries = 4;
 
-    
      prompt.get('number', function(err,response){
    
     if (err){
@@ -35,7 +34,7 @@ function guessTheNumber(){
     }
       
     else if (response.number === randomNumber){
-      console.log ('you win !')
+      console.log ('you win !');
       console.log ('You have '+ tries +' lives left');
     }
     else{
@@ -43,8 +42,8 @@ function guessTheNumber(){
         console.log('You have only '+ (4-tries)+ 'tries left');
     }
     
-    })
-};
+    });
+}
   
   
 
